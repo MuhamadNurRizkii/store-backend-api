@@ -30,6 +30,8 @@ npm install
 
 ### Setup Environment
 
+Buat file `.env` di root project:
+
 ```bash
 DATABASE_URL="mysql://user:password@localhost:3306/mydb"
 DATABASE_USER="root"
@@ -68,3 +70,40 @@ http://localhost:3000
 ```
 
 ---
+
+## API Documentation
+
+### Base URL
+
+http://localhost:3000/api/products
+
+### 1. Create Product
+
+POST /api/products/create
+
+Requset Body:
+
+```json
+{
+  "name": "Nasi Goreng",
+  "price": 15000,
+  "stock": 20,
+  "description": "Nasi Goreng enak"
+}
+```
+
+Response: 201
+
+```json
+{
+  "success": true,
+  "message": "Berhasil menambahkan produk baru",
+  "data": {
+    "id": 1,
+    "name": "Nasi Goreng",
+    "price": 15000,
+    "stock": 20,
+    "description": "Nasi Goreng enak"
+  }
+}
+```
