@@ -129,3 +129,23 @@ Response: 200
   ]
 }
 ```
+
+### 2. Get Product By Id
+
+POST /api/products/:id
+
+Response: 200
+
+```json
+{
+  "success": true,
+  "message": "Produk berhasil diambil",
+  "data": {
+    "id": 2,
+    "name": "Mie Rebus",
+    "price": 10000,
+    "stock": 20,
+    "description": "Mie Rebus enak"
+  }
+}
+```
