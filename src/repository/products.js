@@ -5,3 +5,7 @@ export const createProduct = async (data) => {
     data: data,
   });
 };
+
+export const getAllProduct = async () => {
+  return prisma.product.findMany();
+};

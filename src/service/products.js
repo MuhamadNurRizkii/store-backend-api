@@ -1,4 +1,4 @@
-import { createProduct } from "../repository/products.js";
+import { createProduct, getAllProduct } from "../repository/products.js";
 
 export const createProductService = async (payload) => {
   try {
@@ -19,6 +19,25 @@ export const createProductService = async (payload) => {
       statusCode: 201,
       message: "Berhasil menambahkan produk baru",
       data: product,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      statusCode: 500,
+      message: error.message,
+    };
+  }
+};
+
+export const getAllProductsService = async () => {
+  const products = await getAllProduct();
+
+  try {
+    return {
+      success: true,
+      statusCode: 200,
+      message: "Produk berhasil diambil",
+      data: products,
     };
   } catch (error) {
     return {
