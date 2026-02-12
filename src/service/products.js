@@ -1,4 +1,8 @@
-import { createProduct, getAllProduct } from "../repository/products.js";
+import {
+  createProduct,
+  getAllProduct,
+  getProductById,
+} from "../repository/products.js";
 
 export const createProductService = async (payload) => {
   try {
@@ -38,6 +42,32 @@ export const getAllProductsService = async () => {
       statusCode: 200,
       message: "Produk berhasil diambil",
       data: products,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      statusCode: 500,
+      message: error.message,
+    };
+  }
+};
+
+export const getProductByIdService = async (id) => {
+  try {
+    if (!id) {
+      return {
+        success: false,
+        statusCode: 400,
+        message: "Id tidak ditemukan",
+      };
+    }
+
+    const product = await getProductById(Number(id));
+    return {
+      success: true,
+      statusCode: 200,
+      message: "Produk berhasil diambil",
+      data: product,
     };
   } catch (error) {
     return {

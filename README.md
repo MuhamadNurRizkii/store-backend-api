@@ -107,3 +107,25 @@ Response: 201
   }
 }
 ```
+
+### 2. Get All Product
+
+POST /api/products
+
+Response: 200
+
+```json
+{
+  "success": true,
+  "message": "Produk berhasil diambil",
+  "data": [
+    {
+      "id": 1,
+      "name": "Nasi Goreng",
+      "price": 15000,
+      "stock": 20,
+      "description": "Nasi Goreng enak"
+    }
+  ]
+}
+```
