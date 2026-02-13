@@ -149,3 +149,33 @@ Response: 200
   }
 }
 ```
+
+### 2. Edit Product By Id
+
+PUT /api/products/edit/:id
+
+Requset Body:
+
+```json
+{
+  "name": "Nasi Goreng",
+  "price": 18000,
+  "stock": 25,
+  "description": "Nasi Goreng Enak Banget"
+}
+```
+
+Response: 200
+
+```json
+{
+  "success": true,
+  "message": "Edit Produk Berhasil",
+  "data": {
+    "name": "Nasi Goreng",
+    "price": 18000,
+    "stock": 25,
+    "description": "Nasi Goreng Enak Banget"
+  }
+}
+```

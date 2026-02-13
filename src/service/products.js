@@ -107,7 +107,7 @@ export const editProductService = async (id, data) => {
     return {
       success: true,
       statusCode: 200,
-      message: "Produk berhasil diambil",
+      message: "Edit Produk Berhasil",
       data: product,
     };
   } catch (error) {
