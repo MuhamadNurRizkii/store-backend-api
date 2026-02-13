@@ -223,19 +223,6 @@ Response: 500
 
 ---
 
-## Project Structure
-
-src/
-├── model
-├── controllers
-├── routes
-├── services
-├── repository
-├── prisma
-└── app.js
-
----
-
 ### Author
 
 Muhamad Nur Rizki
