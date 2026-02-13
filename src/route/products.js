@@ -4,6 +4,7 @@ import {
   getAllProducts,
   getProductById,
   editProduct,
+  deleteProduct,
 } from "../controller/products.js";
 
 export const Product = express.Router();
@@ -16,3 +17,5 @@ Product.get("/products", getAllProducts);
 Product.get("/product/:id", getProductById);
 // edit product by id
 Product.put("/products/edit/:id", editProduct);
+// delete product by id
+Product.delete("/products/delete/:id", deleteProduct);

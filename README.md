@@ -81,7 +81,7 @@ http://localhost:3000/api/products
 
 POST /api/products/create
 
-Requset Body:
+Request Body:
 
 ```json
 {
@@ -108,9 +108,9 @@ Response: 201
 }
 ```
 
-### 2. Get All Product
+### 2. Get All Products
 
-POST /api/products
+GET /api/products
 
 Response: 200
 
@@ -130,9 +130,9 @@ Response: 200
 }
 ```
 
-### 2. Get Product By Id
+### 3. Get Product By Id
 
-POST /api/products/:id
+GET /api/products/:id
 
 Response: 200
 
@@ -150,11 +150,11 @@ Response: 200
 }
 ```
 
-### 2. Edit Product By Id
+### 4. Update Product By Id
 
 PUT /api/products/edit/:id
 
-Requset Body:
+Request Body:
 
 ```json
 {
@@ -172,6 +172,7 @@ Response: 200
   "success": true,
   "message": "Edit Produk Berhasil",
   "data": {
+    "id": 1,
     "name": "Nasi Goreng",
     "price": 18000,
     "stock": 25,
@@ -179,3 +180,62 @@ Response: 200
   }
 }
 ```
+
+### 5. Delete Product By Id
+
+DELETE /api/products/delete/:id
+
+Response: 200
+
+```json
+{
+  "success": true,
+  "message": "Produk berhasil dihapus",
+  "data": {
+    "id": 3,
+    "name": "Kopi hitam",
+    "price": 8000,
+    "stock": 10,
+    "description": "Kopi Hitam sehitam kehidupan"
+  }
+}
+```
+
+### Error Response
+
+Response: 400
+
+```json
+{
+  "success": false,
+  "message": "error message"
+}
+```
+
+Response: 500
+
+```json
+{
+  "success": false,
+  "message": "Terjadi kesalahan server"
+}
+```
+
+---
+
+## Project Structure
+
+src/
+├── model
+├── controllers
+├── routes
+├── services
+├── repository
+├── prisma
+└── app.js
+
+---
+
+### Author
+
+Muhamad Nur Rizki

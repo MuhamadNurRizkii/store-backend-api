@@ -3,6 +3,7 @@ import {
   getAllProduct,
   getProductById,
   editProduct,
+  deleteProduct,
 } from "../repository/products.js";
 
 export const createProductService = async (payload) => {
@@ -108,6 +109,32 @@ export const editProductService = async (id, data) => {
       success: true,
       statusCode: 200,
       message: "Edit Produk Berhasil",
+      data: product,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      statusCode: 500,
+      message: error.message,
+    };
+  }
+};
+
+export const deleteProductService = async (id) => {
+  try {
+    const product = await deleteProduct(Number(id));
+
+    if (product === null) {
+      return {
+        success: false,
+        statusCode: 400,
+        message: "Produk tidak ditemukan!",
+      };
+    }
+    return {
+      success: true,
+      statusCode: 200,
+      message: "Produk berhasil dihapus",
       data: product,
     };
   } catch (error) {
