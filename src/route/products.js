@@ -3,6 +3,7 @@ import {
   createProduct,
   getAllProducts,
   getProductById,
+  editProduct,
 } from "../controller/products.js";
 
 export const Product = express.Router();
@@ -13,3 +14,5 @@ Product.post("/products/create", createProduct);
 Product.get("/products", getAllProducts);
 // get product by id
 Product.get("/product/:id", getProductById);
+// edit product by id
+Product.put("/products/edit/:id", editProduct);

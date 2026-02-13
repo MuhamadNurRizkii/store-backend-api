@@ -16,3 +16,12 @@ export const getProductById = async (id) => {
     },
   });
 };
+
+export const editProduct = async (id, data) => {
+  return prisma.product.update({
+    where: {
+      id: id,
+    },
+    data: data,
+  });
+};
