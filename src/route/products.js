@@ -14,7 +14,7 @@ Product.post("/products/create", createProduct);
 // get all products
 Product.get("/products", getAllProducts);
 // get product by id
-Product.get("/product/:id", getProductById);
+Product.get("/products/:id", getProductById);
 // edit product by id
 Product.put("/products/edit/:id", editProduct);
 // delete product by id

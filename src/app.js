@@ -1,6 +1,6 @@
 import express from "express";
 import { Product } from "./route/products.js";
-const app = express();
+export const app = express();
 const port = 3000;
 
 app.use(express.json());
